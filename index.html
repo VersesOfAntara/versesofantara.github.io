@@ -232,7 +232,7 @@ footer{border-top:1px solid var(--border);padding:1.75rem 2rem;text-align:center
 //  2. Create a new form, copy its ID (looks like "xabcdef")
 //  3. Paste it between the quotes, replacing YOUR_FORM_ID
 // ─────────────────────────────────────────────
-const FORMSPREE_ID = 'YOUR_FORM_ID';
+const FORMSPREE_ID = 'xnjylnry';
 
 const STORIES = [
   {
@@ -458,7 +458,7 @@ document.getElementById('contact-send').onclick = async () => {
   if (!message) { document.getElementById('c-message').classList.add('field-err'); document.getElementById('err-message').classList.add('show'); valid = false; }
   if (!valid) return;
 
-  if (FORMSPREE_ID === 'xnjylnry') {
+  if (FORMSPREE_ID === 'YOUR_FORM_ID') {
     setStatus('Contact form is not yet connected — add your Formspree ID.', 'bad');
     return;
   }
