@@ -243,7 +243,6 @@ footer{border-top:1px solid var(--border);padding:1.75rem 2rem;text-align:center
 
 <div class="map-overlay" id="map-overlay">
   <button class="map-overlay-close" id="map-overlay-close">&times;</button>
-  <img src="antara-map.png" alt="Map of Antara — enlarged">
 </div>
 
 <script>
@@ -511,7 +510,16 @@ document.querySelectorAll('.nav-links a').forEach(a=>a.onclick=()=>document.getE
 
 // ── MAP ENLARGE ───────────────────────────────
 const mapOverlay = document.getElementById('map-overlay');
-document.getElementById('map-frame').onclick = () => { mapOverlay.classList.add('open'); document.body.style.overflow = 'hidden'; };
+document.getElementById('map-frame').onclick = () => {
+  if (!mapOverlay.querySelector('img')) {
+    const img = document.createElement('img');
+    img.src = 'antara-map.png';
+    img.alt = 'Map of Antara — enlarged';
+    mapOverlay.appendChild(img);
+  }
+  mapOverlay.classList.add('open');
+  document.body.style.overflow = 'hidden';
+};
 function closeMap() { mapOverlay.classList.remove('open'); document.body.style.overflow = ''; }
 document.getElementById('map-overlay-close').onclick = closeMap;
 mapOverlay.onclick = e => { if (e.target === mapOverlay || e.target.tagName === 'IMG') closeMap(); };
