@@ -59,6 +59,8 @@ nav{position:sticky;top:0;z-index:500;background:rgba(13,10,5,.96);border-bottom
 .btn-ghost:hover{background:rgba(201,148,58,.08);border-color:var(--border-hi);color:var(--text-bright)}
 .btn-danger{border-color:rgba(176,48,48,.45);color:#c06060}
 .btn-danger:hover{background:rgba(176,48,48,.2);color:#e08080;border-color:rgba(176,48,48,.7)}
+.btn-approve{border-color:rgba(90,158,115,.5);color:var(--green-bright)}
+.btn-approve:hover{background:rgba(90,158,115,.18);color:#7ec496;border-color:rgba(90,158,115,.75)}
 #fanart{border-top:1px solid var(--border)}
 .upload-box{background:var(--bg-card);border:1px solid var(--border);border-radius:3px;padding:2rem;margin-bottom:2.5rem}
 .upload-box h3{font-family:'Cinzel',serif;font-size:.8rem;color:var(--gold);letter-spacing:.12em;text-transform:uppercase;margin-bottom:.75rem}
@@ -82,6 +84,17 @@ nav{position:sticky;top:0;z-index:500;background:rgba(13,10,5,.96);border-bottom
 .admin-bar{display:none;align-items:center;justify-content:space-between;background:rgba(176,48,48,.1);border:1px solid rgba(176,48,48,.22);border-radius:3px;padding:.6rem 1.25rem;margin-bottom:1.5rem;gap:1rem;flex-wrap:wrap}
 .admin-mode .admin-bar{display:flex}
 .admin-bar-txt{font-family:'Cinzel',serif;font-size:.68rem;letter-spacing:.1em;color:#c07070}
+.pending-section{display:none;margin-bottom:2.5rem}
+.admin-mode .pending-section.has-items{display:block}
+.pending-hd{font-family:'Cinzel',serif;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:#c07070;margin-bottom:1.25rem;padding-bottom:.5rem;border-bottom:1px solid rgba(176,48,48,.2)}
+.pending-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1.25rem}
+.pending-item{background:var(--bg-card2);border:1px solid rgba(176,48,48,.25);border-radius:3px;overflow:hidden}
+.pending-item img{width:100%;display:block;border-bottom:1px solid var(--border)}
+.pending-meta{padding:.75rem .85rem}
+.pending-meta .fa-title{font-family:'Cinzel',serif;font-size:.75rem;color:var(--parchment);display:block;margin-bottom:.15rem}
+.pending-meta .fa-artist{font-size:.7rem;font-style:italic;color:var(--text);opacity:.5;display:block;margin-bottom:.75rem}
+.pending-actions{display:flex;gap:.5rem}
+.pending-actions .btn{font-size:.62rem;padding:.32rem .7rem}
 .gallery-empty{text-align:center;padding:3rem 2rem;font-style:italic;opacity:.38;font-size:.9rem}
 .fanart-grid{columns:3;gap:1rem}
 .fanart-item{break-inside:avoid;margin-bottom:1rem;position:relative}
@@ -102,25 +115,30 @@ nav{position:sticky;top:0;z-index:500;background:rgba(13,10,5,.96);border-bottom
 .modal-close:hover{opacity:.85;color:var(--gold)}
 .modal-tag{font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:var(--green-bright);margin-bottom:.6rem}
 .modal h2{font-family:'Cinzel',serif;font-size:1.45rem;color:var(--parchment);margin-bottom:.4rem;line-height:1.3}
-.modal-era{font-size:.78rem;font-style:italic;color:var(--text);opacity:.45;margin-bottom:1.75rem}
+.modal-era{font-size:.78rem;font-style:italic;color:var(--text);opacity:.45;margin-bottom:.4rem}
+.read-stats{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.1em;color:var(--text);opacity:.45;margin-bottom:1.5rem}
 .ch-list{list-style:none}
 .ch-row{display:flex;align-items:baseline;gap:1rem;padding:.7rem 0;border-bottom:1px solid rgba(201,148,58,.1);transition:.15s;border-radius:2px}
 .ch-row:last-child{border-bottom:none}
 .ch-row:hover{background:rgba(201,148,58,.04);padding-left:.5rem}
-.ch-num{font-family:'Cinzel',serif;font-size:.63rem;letter-spacing:.1em;color:var(--gold);min-width:90px;flex-shrink:0}
-.ch-title{font-size:.9rem;color:var(--text-bright);flex:1}
-.ch-status{font-size:.67rem;font-style:italic;color:var(--text);opacity:.32}
 .ch-row.readable{cursor:pointer}
 .ch-row.readable .ch-num{color:var(--gold-bright)}
 .ch-row.readable .ch-status{color:var(--gold);opacity:.85;font-style:normal}
-/* Story text */
+.ch-num{font-family:'Cinzel',serif;font-size:.63rem;letter-spacing:.1em;color:var(--gold);min-width:90px;flex-shrink:0}
+.ch-title{font-size:.9rem;color:var(--text-bright);flex:1}
+.ch-status{font-size:.67rem;font-style:italic;color:var(--text);opacity:.32}
 .story-text{font-size:.92rem;line-height:2;color:var(--text-bright)}
 .story-text p{margin-bottom:1em}
 .story-text p.byline{font-family:'Cinzel',serif;font-size:.75rem;letter-spacing:.12em;color:var(--gold);opacity:.65;margin-bottom:2rem;text-transform:uppercase}
 .story-text p.wrong-thing{color:var(--gold-bright);font-style:italic;font-size:.95rem}
 .story-text .forge-name{font-family:'Cinzel',serif;text-align:center;letter-spacing:.25em;color:var(--parchment);font-size:1rem;margin:1.5rem 0 1rem;display:block}
 .story-divider{text-align:center;color:var(--gold);opacity:.45;margin:2.25rem 0;letter-spacing:.5em;font-family:'Cinzel',serif;font-size:.85rem}
-.read-stats{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.1em;color:var(--text);opacity:.45;margin-bottom:1.5rem}
+.loading-txt{text-align:center;padding:2rem;font-style:italic;opacity:.5}
+.ch-nav{display:flex;justify-content:space-between;gap:1rem;margin-top:2.5rem;padding-top:1.75rem;border-top:1px solid var(--border)}
+.ch-nav button{flex:1;max-width:48%}
+.ch-nav button:disabled{opacity:.25;cursor:default;pointer-events:none}
+.ch-nav .nav-prev{text-align:left}
+.ch-nav .nav-next{text-align:right;margin-left:auto}
 footer{border-top:1px solid var(--border);padding:1.75rem 2rem;text-align:center;font-size:.77rem;font-style:italic;color:var(--text);opacity:.28}
 @media(max-width:680px){
   nav{padding:.8rem 1.25rem}
@@ -136,433 +154,7 @@ footer{border-top:1px solid var(--border);padding:1.75rem 2rem;text-align:center
 @media(max-width:420px){.fanart-grid{columns:1}}
 </style>
 
-<!-- Story content template -->
-<template id="c-four-wrong-things">
-<p class="byline">by Michael Cerutti</p>
-<p>The rain had soaked through his clothes hours ago.</p>
-<p>Issachar's cloak clung to his shoulders like a wet hide. His hood, half stuck to the side of his face, offered no protection from the cold drops that had long since traced streams down into his beard. He walked with the stiff, stubborn gait of someone who had stopped trying to stay dry hours ago. Even his boots, thick, dwarven-made, stitched with care, had given up. Water sloshed with every step.</p>
-<p>Spring had come early this year to the hills, but today it offered no mercy.</p>
-<p>The road, winding through the wide rolling plains, was little more than mud now. Clusters of trees rose from the grasses and wildflowers, but their beauty was not seen in the thick rain. Pocked with boot-holes, puddles, and the occasional broken root or ancient cobblestone, it wound through the darkening hills like a tired thought. The sky above held the last dull glow of the sun somewhere behind the clouds, but it gave no warmth.</p>
-<p>Issachar trudged on, hunched and quiet for a dwarf. His breath was slow and steady, fogging with every exhale. He did not curse the rain, that would be wasted breath. He had already decided it simply was, and there was nothing to do but keep walking.</p>
-<p>Then, through the blur of rain and dusk, he saw it.</p>
-<p>A flat clearing just off the road. A hollow ring of blackened stones, a firepit built by hands that had known what they were doing. Char marks curled outward like old memory. Grass crushed flat from where two bedrolls had been laid. Someone stayed here recently. Maybe yesterday. Maybe longer. But what mattered most: someone had left firewood behind, stacked against a trio of trees.</p>
-<p>A smile crept through his thick beard as he knelt down to feel the bark. Soaked through. Every piece. He exhaled slowly with disappointment, kneeling in the mud.</p>
-<p>It had been foolish to hope. Still, the thought of rest had started to anchor itself in his bones. He was stiff, heavy, and weary in a way that his forge back home would never make him feel. Rain pooled around him, and he heard something, a low scraping sound.</p>
-<p>He looked up just in time to see it, a dark sheet of water racing down the slope behind the trees. It wasn't a river, but the storm had broken something further upstream, and now the runoff was barreling down in a wide, foaming swell.</p>
-<p>Issachar didn't hesitate. He dove and scrambled to his feet away from the campsite. The blackened stones clattered apart as they met the rushing water. The small pile of wood was gone in a blink, carried off like driftwood. The cold water rose to his feet before receding again, dragging sodden leaves and debris with it. He stood motionless for a breath, the rain still fell. The campsite was ruined, a slurry of mud, branches, and drowned coals. The only trace of a campsite was the ring of disturbed earth where the stones had been.</p>
-<p>No muttering, no cursing, just quiet acceptance.</p>
-<p>He adjusted his pack, tightening the leather strap across his chest, and looked across the hills to continue his journey.</p>
-<p>As the sun met the hills on the horizon, he saw a jagged edge of rock rising from the grasses like a tooth. A rocky outcrop, maybe part of a bluff or natural ridge, dark against the sky. It wasn't close, he'd never make it before nightfall. But it was shelter, stone above and Mora willing, a ledge to hide from the rain.</p>
-<p>The sun was gone. It hadn't disappeared as much as swallowed by the low, bruised clouds and the falling rain. The world faded into shadows, and the wind had turned sharper.</p>
-<p>Issachar kept walking in the direction that he saw the rocks sticking above the grass. The sound came not long after the sun was completely gone. Distant and low, too guttural to be thunder, too long to be wind. Something alive. Something large. He paused for a moment, scanning the small distance he could still see ahead.</p>
-<p>It was nearly an hour later when he reached the formation, a jagged crescent of stone rising from the hill like a broken rim of a buried bowl. It looked as if Mora herself shattered a hill in half, then forgot about it.</p>
-<p>He followed the base until he found a hollow, narrow cave, just big enough to duck inside. But he wouldn't dare enter blindly. First Issachar knelt down to feel the ground with a flat palm. Listening to the stone, he closed his eyes. He saw no tracks, no smell, no scratch marks. Just dry, dust-covered rock.</p>
-<p>There was no scent of a bear or stench of a troll, only silence and the sound of the rain against the stone above. He opened his eyes and went inside, the space was shallower than he thought, but the stone was dry.</p>
-<p>There were a few twigs scattered nearby, brittle and small. He collected what he could and cleared a small patch of earth that the rain hadn't touched. He clustered some small stones in a circle around the twigs. It wasn't much, but it was enough.</p>
-<p>He sat down and pulled a small hammer from his belt. Not a Warhammer, not a smith's sledge, something in between. It was small and polished, ceremonial by shape but worn at the grip from decades of use.</p>
-<p>He held it in one hand, resting the flat face gently against the small pile of twigs. The gesture had no urgency, no flourish, no threat. Then he spoke for the first time in what seemed like days.</p>
-<p>Not the common tongue, not the dwarvish he learned as a child, but an ancient tongue, the language of the dragons.</p>
-<p>To most, the words would sound harsh and grating across the ears, like a knife across a rock. But to those who have studied at the Arcanum Sanctuary, they carried a deeper shape.</p>
-<p>The hammer began to glow, a deep bronze light from inside the steel like a forge warming from the inside out. No fire, just heat.</p>
-<p>Then the twigs caught, just a flicker, then a flame, then a fire. Larger than such small kindling should allow, it pulsed once, then held a steady golden-orange.</p>
-<p>Issachar closed his eyes again and took a deep breath of relief.</p>
-<p>He took off his waterlogged boots and stretched most of his clothes out to dry against the cave wall. Sleep began to tug at him like a quiet tide. As his eyes closed for the night, the flame remained. Not wild, not bright, just steady. As if it remembered why it had been lit.</p>
-<p>The fire still burned. It hadn't guttered or dulled. It glowed the color of sun-warmed brass, flickering in the rhythm of Issachar's breath as he slept. His head lay against the stone wall of the cave, one arm cradled around his pack, the other resting at his hammer laying next to him.</p>
-<p>Outside, the rain had stopped. The storm passed by, leaving the land wet and quiet, save for the slow drip of water from the stone ledge outside the mouth of the cave. The grasses beyond waved in the breeze, no longer flattened, but rising again, stubborn as always.</p>
-<p>Then the silence was broken, the roar came again. Closer.</p>
-<p>It echoed off the stone ridge, loud enough to wake the dead, or at least a sleeping dwarf. Issachar's eyes opened instantly. No grogginess, no confusion. Just reflecting the brass firelight, fixed and still on the opening of the cave entrance.</p>
-<p>He did not move at first, just listened.</p>
-<p>The cave swallowed the sound, but outside the hills breathed a new tension. He slowly stood up, shoulders rolling beneath the weight of his damp back. One hand found the grip of his hammer and clenched it tightly.</p>
-<p>Judging by the echo, the roar came from the east. Somewhere beyond the ridgeline, near the low ravines he'd crossed earlier in the day. It wasn't human, no cry of war, no horn. Just a voice of hunger, wild and old.</p>
-<p>He leaned forward, listening again.</p>
-<p>…</p>
-<p>Nothing.</p>
-<p>The fire crackled beside him, casting his shadow against the cave wall. The heat had warmed his boots but did nothing for the chill going down his bones.</p>
-<p>He stepped quietly to the mouth of the cave. The sky had opened, stars now spilled across it like embers in a dying forge. Tonight the Cradle was dim but steady, shimmering across with waves of violet and pale green, just enough light to outline the curves of the hills and the wet grass.</p>
-<p>Issachar looked out across the hills, no movement, no fires. He remained there a few moments longer, watching. Then, with quiet breath, he returned to the fire.</p>
-<p>He sat with his legs crossed, his hammer resting across his lap, the firelight casting slow shadows.</p>
-<p>He watched.</p>
-<p>He listened.</p>
-<p>The fire crackled softly in front of him, a steady rhythm. Comforting. He adjusted his grip on his hammer, blinked once, twice. His eyes lingered on the dark beyond the fire.</p>
-<p>His eyelids drifted lower.</p>
-<p>Then closed.</p>
-<p>He didn't know how long he slept, only that the fire still burned. Lower now, a quiet glow still casting shadows.</p>
-<p>The roar is what woke Issachar up.</p>
-<p>Closer.</p>
-<p>Much closer.</p>
-<p>He jolted upright, breath caught somewhere between his chest and his throat. The firelight danced as his heart quickened.</p>
-<p>For the first time since leaving the Forge, there was a flicker of panic in his eyes.</p>
-<p>He instinctively reached for his hammer and listened.</p>
-<p>…</p>
-<p>Nothing.</p>
-<p>No footsteps, no snarls, just the wind blowing across the mouth of the cave. The memory of something hung in the air, as if the roar had pushed the silence aside and left the land unsteady in its wake.</p>
-<p>He moved to the entrance of the cave, his eyes narrowing on the darkness outside. The Cradle still shimmered above, the stars clear. The air smelled of wet earth and stone.</p>
-<p>Then he saw them.</p>
-<p>Tracks.</p>
-<p>In the mud just outside the cave, shallow, incomplete, glistening where the fire's light caught the pooled water. It looked humanoid, long-footed, toed, barefoot.</p>
-<p>But the spacing was…wrong. The depth inconsistent. As if the creature was only half there.</p>
-<p>Issachar knelt and carefully placed two fingers beside one of the prints. The edges almost seem to blur into the mud, not smeared or scuffed. It was like someone stepped through the mud instead of into it.</p>
-<p>He swallowed hard.</p>
-<p>Not a duskwalker, he thought. Not here, not now.</p>
-<p>It was still night, the stars overhead but still bright. And the Old Hills were too far east from the Ruins of Greyshore, too far for a creature bound to dying light.</p>
-<p>He stood slowly, eyes scanning the ridgeline, then the hills beyond. Nothing moved. No breath, no shift of grass, no eyes glinting back at him. Just the stars and the Cradle above. Just the fire behind him, steady and low. And the tracks.</p>
-<p>Whoever, or whatever, it was had come to the cave, stopped and looked inside, and turned away.</p>
-<p>Issachar remained still for a long while, hammer in hand, waiting.</p>
-<p>But nothing returned.</p>
-<p>Eventually, with careful steps, he returned to the fire and put on his boots and cloak. His eyes stayed open and his hammer rested across his knees.</p>
-<p>The fire burned on.</p>
-<p>Issachar sat by the fire, shoulders tense, eyes fixed on the mouth of the cave.</p>
-<p>The prints remained where he found them, half-formed, unnatural, as though the ground itself couldn't decide if something had walked across it. The shape still clung to his mind.</p>
-<p>Not a duskwalker, he told himself again. Not dusk. Too far east. Too far.</p>
-<p>But the thought wouldn't leave him.</p>
-<p>Duskwalkers didn't stray. Everyone knew that they haunt the old bones of Greyshore, where the air still stood stale with what had gone wrong. They don't travel, they linger.</p>
-<p>But…</p>
-<p>He's heard stories. Quiet ones. A mage disappeared near forgotten cairns not too far north from here. A hunter had gone missing, his footprints mid-stride. A scream heard across the river, just once, at the wrong hour.</p>
-<p>Issachar stared into the fire, jaw tight. No more sleep tonight, that much was certain.</p>
-<p>He reached for his waterskin and drank, then shifted his pack back into place once more. He needed to move at first light. No fire at the next camp, no pausing for comfort.</p>
-<p>He told himself: One more day out of the Old Hills. Then a day and a half to the river. Less than a day north to the old stone bridge. Stay south of the ruins. Then Gravesford. An inn, a roof. Warm food.</p>
-<p>The last thought lingered more than he meant it to.</p>
-<p>The fire crackled again, but he didn't move. He watched the cave mouth, the brass of the fire glinting off his eyes as he watched for the first stream of dawn.</p>
-<p>The sun was warm for the first time in weeks.</p>
-<p>It touched the hills behind him like a blessing from Mora herself, drawing the cold from his shoulders as if the land itself were sighing off the last weight of winter. The storm had long passed, and the wind, while still brisk, no longer bit through cloak and leather. Instead, it stirred the grasses, tousling them in long waves of green and gold.</p>
-<p>Issachar paused at the crest of the last hill and rolled his shoulders beneath his pack. A fine sheen of sweat clung to his brow, not from effort, but from the warmth of the sunlight. He turned his face toward it, eyes closed, just feeling the heat.</p>
-<p>Below him, the plains stretched wide and open, dotted with thickets, swaying wildflowers, and the occasional shape of a small bevy of deer leaping through the grass. A trio of birds scattered from a nearby tree ahead, their wings beating against the quiet like laughter.</p>
-<p>It was a good day to travel. No roar, no tracks. Just the hills and the path behind him with the Cradle overhead, just faintly visible with the sun in the sky. Only in the spring, he thought to himself, watching the faint greens and violets weave through the sky.</p>
-<p>He had been walking for weeks now, ever since leaving the Forge, after the celebration. Most of the journey had followed the old Lexian road, a relic from the days of when armies marched through the hills in columns, paved stone beneath iron boots. Now the road was more memory than path, broken, swallowed by grass. In some stretches the road was lost entirely under soil and creeping wildflowers.</p>
-<p>Just before leaving the Old Hills behind him, Issachar had taken a cut northwest. He was sure this would shave off over a week of travel to Gravesford, maybe more if the ground stayed dry.</p>
-<p>A straight line is faster than broken stone roads, he told himself.</p>
-<p>He was sure of it.</p>
-<p>Two more days had passed. The storm didn't return and the sky held its warmth. The sun followed him like a distant companion as he crossed the plains, boots stirring up pollen and dry dust.</p>
-<p>The first day passed easily. The hills flattened. The air sweetened. Birds flew in flocks again. But by the second evening, the road turned soft underfoot, loamy and damp. The wind carried with it the scent of cattail reeds.</p>
-<p>Issachar crested a slope just as the sun began to set behind the horizon, and there it was: the river, broad and slow, catching the light like hammered bronze.</p>
-<p>He allowed himself a long breath, brushed the sweat off the back of his neck, and closed his eyes. That's the worst of it, he told himself.</p>
-<p>He camped near the river that night, no fire, just a blanket stretched over a bed of dry grass tucked in a small fold of land. The sound of the river was steady and calming. He chewed through a small piece of jerky and some hard tack, rationing what little remained.</p>
-<p>He would need to buy supplies in Gravesford. Soon.</p>
-<p>The next morning, with the river to his left, he found what he believed to be the old Lexian road, or what was left of it. Broken stone and sunken wheel etchings could faintly be made out, following the bend of the river north and south.</p>
-<p>He turned north.</p>
-<p>A half day to the old stone bridge and cross there, he thought. Another day north up the road, and I'll be in Gravesford before that dusk.</p>
-<p>He didn't know the old stone bridge was behind him, already crossed miles south during a route he long abandoned. The Lexian markers were worn to nothing here, no milestones, no posts, no sign to tell him he's off course.</p>
-<p>But the road was clear.</p>
-<p>The river to his left.</p>
-<p>The land was quiet.</p>
-<p>So, he walked.</p>
-<p>The road stayed firm beneath his boots, following the river's edge with lazy curves and shallow bends. Morning birds called from the reeds. He passed a family of river otters near mid-morning, they splashed into the water at the sound of his steps, their sleek shapes disappearing without alarm.</p>
-<p>In the early afternoon, the road began to rise slightly, pulling away from the riverbank. Grasses grew taller here, wilder. Shrubs pushed through the cracks of the old stone road and soon trees began to gather.</p>
-<p>He entered the woods with quiet steps, the canopy overhead casting a dappled patchwork of light across the path. These weren't deep woods, just a stretch of mixed ash, birch, and maple, leaves still unfolding in the newborn warmth of spring.</p>
-<p>But still, the trees thickened, the road narrowed.</p>
-<p>The road curved around a patch of shallow stone ridges. That's when Issachar spotted it, just off the path, half-covered with ivy.</p>
-<p>A stone marker, weathered and listing to one side, its face carved with runes long softened by weather. He stepped forward and brushed his calloused fingers across the inscription.</p>
-<p>Ancient Lexian. He recognized the script but couldn't read it. The square-cut, deliberate markings escaped him.</p>
-<p>His brow furrowed. He crouched, unfastened the worn leather pouch at his belt and rolled it open with practiced care. Chalk, thread, copper dust, hyssop, dried root, ash. No powdered silver.</p>
-<p>He checked again. Chalk, thread, copper dust, hyssop, dried root, ash.</p>
-<p>He muttered a curse, old Dwarvish, sharp and clipped, like striking stone against obsidian.</p>
-<p>Issachar stared at the runes, weighing the spell in his mind. A basic ritual, meant to read languages the mind doesn't comprehend, used by scholars and hedge mages alike. With powdered silver, it was steady. Without it…the risk increases.</p>
-<p>He had heard of and read stories; a miscast translation spell could do worse than produce gibberish. It could turn the reader's intent back on them, confuse the arcane bindings, let the stone drink in the caster's breath. Bind their feet to the dirt. Their hand to the rune.</p>
-<p>Their flesh to the stone.</p>
-<p>He clenched the pouch shut with a sharp twist, the leather biting against his fingers.</p>
-<p>No. Better to walk blind than cast blind, he told himself.</p>
-<p>He looked at the marker again, its face pointing vaguely west, toward the narrowing road ahead. A boundary stone, nothing more, he thought. Still, the unease lingered. The sun was lower and the woods had a way of bending the light, making distances lie.</p>
-<p>He adjusted his pack and stepped back onto the path.</p>
-<p>Issachar walked with a steady rhythm, but as the light began to soften through the branches, a quiet frown formed beneath his beard. He stopped and glanced at the sun. Low already? I should've seen the bridge by now, he thought.</p>
-<p>He retraced his steps in his mind. A short stretch by the river, a brief stop at midday for a bite of jerky and a sip of water. The boundary stone. Did I linger more than I thought? Did the road bend more than it appeared?</p>
-<p>He quickened his pace.</p>
-<p>The birds were quieter now. The sounds of the river had faded behind the trees, replaced by the dry crack of twigs beneath his boots and the sigh of the wind through young leaves.</p>
-<p>The woods weren't dark yet, but the light had dulled, washed pale and flat, as if the day were growing tired.</p>
-<p>Then, through the thinning trees, he saw stone.</p>
-<p>Just a glimpse, low and grey through the underbrush, overgrown with ivy and moss. Just enough to catch the eye.</p>
-<p>Issachar stepped forward, his boots crunching over the leaf litter.</p>
-<p>Finally.</p>
-<p>The old bridge, it had to be. Old, low-slung, likely Lexian work, not the grandiose dwarvish bridges he was used to. Just worn pillars, plain and effective.</p>
-<p>He stepped between the last of the trees, brushing aside a sapling bent across the old road.</p>
-<p>But what he saw wasn't a bridge.</p>
-<p>Before him stood the wide, stretching, open clearing ringed by the fading light of dusk.</p>
-<p>At its core stood the ruins of a town. Stone foundations half eaten by grass and soil. Broken walls, waist high and jagged. The skeletal outline of a Hymni Temple steeple, long since collapsed, its timbers jutting like ribs from the earth. Crumbled chimneys. A shattered fountain, green with age and neglect.</p>
-<p>What little remained of Greyshore was quiet.</p>
-<p>It took Issachar a moment to realize what was missing.</p>
-<p>No lapping waves from the lake past the temple.</p>
-<p>No birdsong.</p>
-<p>No insects.</p>
-<p>No rustling in the bush.</p>
-<p>Not even the wind.</p>
-<p>He glanced towards the shoreline, the breeze he'd felt all day…here…in this space…nothing moved.</p>
-<p>The air hung still, as if Mora herself was holding her breath. Even his own exhale felt wrong, like sound didn't want to carry here. Like Greyshore refused to echo.</p>
-<p>Issachar's hand found the handle of his hammer unconsciously. Not for defense, for grounding.</p>
-<p>His eyes scanned the ruins, the stonework was old, older than most towns he'd passed through in his years. But it wasn't decay that struck him. It was preservation through stillness. The way nothing had changed. No animals had picked through it, no vines had overtaken what doorways remained. Even the moss grew flat and even, as if shaped by an unseen hand.</p>
-<p>He had seen ruins before. He had walked through old battlefields, over sunken roads and through burned-out homesteads and barns.</p>
-<p>This was different, he thought at first. Then the realization hit him. The ruins were made Serene.</p>
-<p>The words surfaced unbidden. He tasted them like iron.</p>
-<p>That feeling, from the final test of a mage before graduation. The Trial of Serenity, a trial of silence, of absence, where the arcane is stripped away and the entire world, existence itself becomes hollow.</p>
-<p>This was worse.</p>
-<p>Because the silence here wasn't within him, it was everywhere.</p>
-<p>And it was watching.</p>
-<p>He lifted his eyes in fear to the sky, seeking comfort in the familiar green-violet shimmer that had followed him every night since childhood, where he would watch it for hours.</p>
-<p>But above the Ruins of Greyshore, the Cradle was gone.</p>
-<div class="story-divider">✦ &nbsp; ✦ &nbsp; ✦</div>
-<p>Issachar adjusted the weight of his pack and stepped forward.</p>
-<p>He had only heard fragments, whispered warnings folded in the backs of books. A ruined town, the battlefield that never happened. Soldiers from both sides of an ancient civil war, drawn here and then lost. Not to each other, but to something else.</p>
-<p>A curse, some said. A wound in the world.</p>
-<p>The kind of place where Duskwalkers were said to linger, watching the edges of death, guiding the stillness.</p>
-<p>But there were no watchers here. No pale lights in the windows.</p>
-<p class="wrong-thing">This was the first wrong thing.</p>
-<p>He had read Arcanum Sanctuary field reports…those that remained. Notes recovered from broken satchels, fragments of journals burned along the edges. Mages had come here to study the Duskwalkers. Those who did return wrote of a place that "should never be tread upon," without further elaboration. Some refused to speak about it at all.</p>
-<p>Issachar had heard rumors of a mage who returned to the Sanctuary only to gouge his own eyes out in the Medica weeks later.</p>
-<p>He had not meant to come here.</p>
-<p>The marker stone in the woods had been unreadable, and he had gambled. Now the bones of Greyshore surrounded him, and the sun was beginning to fall.</p>
-<p>Still, he couldn't help it. His eyes scanned the structures, seeking patterns. Curiosity gnawed at him, dull yet persistent.</p>
-<p>The homes were not collapsed…they were opened. Roofs removed. Walls intact, doors untouched. Many still hung on their hinges, dry and quiet. Even the wood lacked rot. The absence of decay made this place seem preserved, not ruined.</p>
-<p class="wrong-thing">The second wrong thing was the torches.</p>
-<p>Dozens of them, planted in circles around the buildings. Spaced fairly evenly, driven deep into soil and stone. Their tips were blackened, but not fresh. Used. Burned. Extinguished.</p>
-<p>He passed one house with six torches forming a loose ring around it. Inside, two corpses. Their armor was rusted, but intact. One wore the sunburst of the Lexian Forward Legions, the other a red hand, six-fingered, a crest he was unfamiliar with. Probably some young rebellion being squashed under the steel boot of the Lexian Commonwealth. But the bodies were curled together in death. Enemies in life, now bracing like children in the cold.</p>
-<p>He moved on. Another home, more torches. Three bodies this time. One still held a holy symbol. Another clutched a spear.</p>
-<p>Issachar had found his breathing had slowed. Not calm…guarded.</p>
-<p>He didn't speak. Even the sound of his leather boots against the stone pathways felt hollow. Refusing to echo.</p>
-<p>The sun dipped lower.</p>
-<p>Shadows started to stretch long across the town square. His own fell behind him, bent against the tilt of the light, cast clean and sharp across the cobblestones.</p>
-<p>He stepped past another ring of torches around what was once a fountain statue, now dry and moss-covered, broken off at the knees.</p>
-<p>Near it was a body, alone. Slumped over as in prayer when they died, the white, gold, and red robes. Though the colors were faded, they were clearly a Hymni priest.</p>
-<p>Issachar stepped forward and knelt beside the figure, his curiosity pulling him toward a small scroll case at the priest's feet.</p>
-<p>He reached for it…then paused.</p>
-<p class="wrong-thing">There was a third wrong thing.</p>
-<p>The angle of the sun still cast light behind him. His shadow stretched across the yard.</p>
-<p>But the priest beside him…</p>
-<p>Had none.</p>
-<p>Issachar's breath caught in his throat.</p>
-<p>He turned and checked again.</p>
-<p>Nothing.</p>
-<p>No distortion, no blur. The body absorbed no light. Reflected no shape.</p>
-<p>The shadow simply wasn't there.</p>
-<p>His stomach clenched. His breath tightened. His hands began to shake.</p>
-<p>Then, without thought…without control…he spoke.</p>
-<p>His words were harsh and old. Hot. Draconic syllables scraped the back of his throat and spat like sparks.</p>
-<p>The flame answered.</p>
-<p>It leapt from his palm in a burst, wild and brilliant, casting the space in fire, brass and gold. The air recoiled, dust burnt from the stones.</p>
-<p>His own shadow danced.</p>
-<p>The corpse…</p>
-<p>Remained untouched.</p>
-<p>No shadow, no response. Not a flicker of resistance.</p>
-<p>Issachar stood quickly, fire raging in his hand as his breath panicked.</p>
-<p>For the first time since leaving the Forge, he felt fear.</p>
-<p>Not fear of dying…the fear of being the only thing alive in a place that had already been erased.</p>
-<p>The fire in Issachar's hand still burned, though his breathing began to slow. The panic hadn't left…it simply recoiled deeper into his chest, hiding behind his ribs like someone watching from the dark.</p>
-<p>He turned in place, casting the firelight along narrow paths between ruined homes. Shadows leapt and shrank, clinging to corners, fleeing into broken doorways. His own still followed him. That had to mean something.</p>
-<p>He walked slowly, deliberately. The fire held low, casting long blades of brass and gold across the stone.</p>
-<p>Past a broken well. Past a blacksmith's anvil, half-sunken into the dirt. Past another torch circle, this one larger. Burnt almost to the base, a cluster of a dozen soldiers in the center.</p>
-<p>Issachar didn't stop.</p>
-<p>The Hymni Temple rose ahead like the spine of something ancient, ribs broken, its back bent toward the sky. Its steeple had collapsed inward. Wooden beams jutted at angles sharp enough to wound the air. But its doors remained shut.</p>
-<p>He paused, one hand pressed against the cold brass of his hammer, the other still holding fire. The temple loomed, not with ruin, but with memory. Memory of a sacred place, warm, comforting, safe…</p>
-<p>He pushed the door inward.</p>
-<p>It felt like it wanted to creak, long and piercing. But there was only a whisper, a whisper forced through gritted teeth.</p>
-<p>Inside, the temple's central hall yawned wide and broken. Stone pews had cracked along their edges. The far wall bore a faded mural of The First Devoted herself, its paint flaked and curled. The statue at the altar was shattered. Scorch marks marred the stones, like an old ritual gone wrong.</p>
-<p>And everywhere…bodies.</p>
-<p>At least fifty.</p>
-<p>Townsfolk. Priests. A group of soldiers slumped against the inner wall. Children lay curled in their mothers' laps and arms.</p>
-<p>And near the front…half-buried under other corpses…faded indigo robes, lined with silver. Two rings on the right hand, shining in Issachar's firelight. A Sanctuary mage. His hand was stretched outward, reaching for the brazier.</p>
-<p>Issachar stepped towards the mage, his boots skimming through ash and dust.</p>
-<p>He walked down the aisle like a mourner at a funeral he hadn't been invited to.</p>
-<p>He stopped at the mage.</p>
-<p>No shadow.</p>
-<p>He checked another body. A Hymni priest. No shadow.</p>
-<p>Another. Then another.</p>
-<p>None.</p>
-<p>He held his flame close, breathing deep.</p>
-<p>Only then did he see it.</p>
-<p>A blot of darkness near the mural. Not a part of it. Not shaped like a beam or buttress. A shadow.</p>
-<p>It hadn't moved. It hadn't shifted when his fire flickered.</p>
-<p>But now…</p>
-<p>It slid. Slow. Measured.</p>
-<p>It peeled from the wall like oil run uphill. Across the floor.</p>
-<p>Nothing had cast it.</p>
-<p>Issachar's throat tightened. He stepped back, slow.</p>
-<p>The shadow passed over a fallen pew, but the shape of the thing did not change. The light did not bend. The darkness did not adapt. It simply swam over whatever it touched.</p>
-<p>It moved toward the center of the great hall…then stilled.</p>
-<p class="wrong-thing">The fourth wrong thing.</p>
-<p>Issachar's fire flared in his hand, heat washing over stone like breath from a forge.</p>
-<p>The shadow recoiled ever so slightly.</p>
-<p>It watched. It waited.</p>
-<p>His mind raced now, not for panic, but for purpose. There was something here the shadow feared. Flame.</p>
-<p>His eyes darted towards the brazier near the altar.</p>
-<p>Half-collapsed, a dark bowl of iron rings. Wide and deep, rimmed with hammered symbols of the Hymnals of Light. The Ever-Burning Flame.</p>
-<p>Most still burned across Antara…small hearths of hope, tended by the faithful, burning even when the rest of the world forgot them.</p>
-<p>But not this one.</p>
-<p>This one was cold.</p>
-<p>Extinguished.</p>
-<p>He touched his flame to it.</p>
-<p>Spoke the Draconic words for rekindling.</p>
-<p>The fire raged from his hand into the brazier.</p>
-<p>It flared, not brass and gold. White.</p>
-<p>And for just a moment, the flame roared with life, like a town bell rung on a silent night.</p>
-<p>The shadow shuddered. It twisted, not away, but inward. Shrinking. Folding. Fleeing.</p>
-<p>The Ever-Burning Flame held for only a heartbeat. Then vanished.</p>
-<p>Issachar recoiled, blinking in the sudden dark. The warmth gone. The brazier cold again.</p>
-<p>More Draconic words sparked in the back of Issachar's throat, and fire crept from his hand again.</p>
-<p>The shadow was gone. Retreated.</p>
-<p>Then, the realization struck with clean, cutting certainty.</p>
-<p>It is afraid of the light.</p>
-<p>That's why the torches had been planted.</p>
-<p>Why the soldiers huddled together in a circle.</p>
-<p>Why the roofs were removed, so light could touch them while they slept.</p>
-<p>So their shadows wouldn't be taken.</p>
-<p>He looked back down the great hall.</p>
-<p>All those bodies. All those empty shapes.</p>
-<p>Not slain.</p>
-<p>Unmade.</p>
-<p>Issachar looked back at his palm. The fire still burned, brass and golden.</p>
-<p>It was not holy Light.</p>
-<p>But it would have to do.</p>
-<div class="story-divider">✦ &nbsp; ✦ &nbsp; ✦</div>
-<p>Issachar stepped out of the Hymni Temple and into the deepening dark.</p>
-<p>The sky above had faded to a dull, sour blue, starless and empty. No shimmer marked the Cradle. No soft green curtains wove with purples across the sky. There was no dusk light. No light at all.</p>
-<p>Greyshore remained untouched.</p>
-<p>He walked without speaking, back to the square where the bodies lay. The torches that had once surrounded them were little more than blackened stubs, sunk into the cracked stone. He tested one…dry, brittle, hollow. It burned quickly, desperately. It failed.</p>
-<p>He began to gather what wood he could in one arm. Splinters from a collapsed cart, the shattered beam of a doorframe, the long haft of a banner-pole, stripped of its colors. He moved methodically, rebuilding what others had made before.</p>
-<p>But as he laid the first torch into place, he stopped.</p>
-<p>He had seen what the torch circles had done. Or rather, what they failed to do. The bodies huddled together inside had still been claimed.</p>
-<p>He held a length of broken wood and stared at the cold circle, the blackened ground where fire had once been.</p>
-<p>This will not be enough, he told himself.</p>
-<p>The wood dropped from his hand, clattering against the stone.</p>
-<p>The Cradle would not return. There would be no shimmer overhead. No protective veil. No memory.</p>
-<p>Just the dark…and the thing that waited in it.</p>
-<p>He moved with purpose now, not fast, but sure. The broken streets of Greyshore stretched out before him like ribs of a fallen beast, each ruined home a hollow eye.</p>
-<p>It didn't take long to find it.</p>
-<p>A squat, square building nestled at the edge of the eastern lane, its chimney still intact, though streaked with black soot. The roof had collapsed in places, but the stone walls stood, weathered but whole. The door hadn't fallen inward. No one had come to fix it. No one had come at all.</p>
-<p>Issachar stepped inside.</p>
-<p>The scent of long-dead smoke clung to the walls…dry, bitter, and unmistakably familiar. It was a forge. He knew it before his eyes confirmed it.</p>
-<p>The hearth lay dormant, choked in cold ash. A shattered rack of tongs lay scattered across the floor. The anvil, though worn, stood at the center like a heart that refused to rot.</p>
-<p>He stepped closer and brushed aside the soot near the mouth of the forge. His fingers struck something solid…stone, rough, but carved.</p>
-<p>A name, buried in grime:</p>
-<span class="forge-name">Silfrtregi</span>
-<p>The name rang like a distant bell in the back of his memory.</p>
-<p>The Silver-Sorrow Clan.</p>
-<p>He had read that name once, long ago, buried deep in a tome no one else had bothered to check out from the Arcanum Sanctuary library in the last hundred years. A dwarven forge-clan, known for delicate silverwork. Obsessive craftsmen, forgotten by most. Lost to time, scholars said. Probably buried in a collapse deep in the mines. Or they had simply faded away.</p>
-<p>But no.</p>
-<p>They had died here. In Greyshore.</p>
-<p>He stood in silence for a long moment. The forge didn't recognize him, but he remembered it.</p>
-<p>Issachar moved carefully through the forge, stepping over splintered benches and the brittle remains of coal buckets, searching for anything that would burn. Most of the furniture had collapsed into moldless ruin, but the wood was dry, preserved by stillness and silence rather than time.</p>
-<p>Beneath the broken bellows, he spotted a glint.</p>
-<p>He crouched, pushing aside the loose ash with his hand. A thick band of silver caught the firelight from his other hand. Not a weapon. Not scrap.</p>
-<p>A silver ring. Not for a hand, for a forging hammer. Interwoven bands of silver and iron, carefully twisted with delicate runes curled along the inside.</p>
-<p>He turned it over in his palm. He knew this work, knew the technique. He could see the layering, the folding, the silent pride built into its symmetry.</p>
-<p>Silfrtregi.</p>
-<p>No one else would have recognized it. No one else would have remembered it.</p>
-<p>But Issachar did.</p>
-<p>He closed his fingers around the ring and held it there for a moment, pressed between calloused palm and fingers.</p>
-<p>"You will be remembered again." He whispered to the ring.</p>
-<p>He slipped the ring into the inner fold of his belt pouch. It did not belong to him.</p>
-<p>But he would carry it anyway.</p>
-<p>He stacked what he could: splintered beams, a broken workbench, shattered stools once meant for apprentices. The forge drank it greedily, coughing out sparks, but no heat. He crouched by the hearth, whispered the Draconic syllables that summoned flame from breath and will, and fed the fire into the waiting stone.</p>
-<p>It caught.</p>
-<p>Slowly.</p>
-<p>Not with glory, not with defiance to the shadows…but with resolve.</p>
-<p>The glow deepened. Shadows fled the corners. The forge began to remember.</p>
-<p>The fire flickered, not from wind…there was no wind…but as if something had stepped into the room that did not belong to light.</p>
-<p>Issachar rose, instinct prickling through his every bone.</p>
-<p>His shadow, still cast cleanly against the wall, began to bend. Not lengthen, not shift. Bending like hot steel being drawn out over an anvil.</p>
-<p>At the edge of the forge wall, near the shattered bellows, it was there.</p>
-<p>A shadow with no source.</p>
-<p>A creeping absence, gliding across the room.</p>
-<p>It did not lunge. It did not screech. It simply came. Inevitable as forgetting.</p>
-<p>The fire from the forge almost wanted to bend away from it.</p>
-<p>Issachar stepped back. His heel caught on a fallen bucket and nearly twisted his ankle. He grunted, steadied…</p>
-<p>The anvil.</p>
-<p>He reached it.</p>
-<p>Raised his brass hammer in both hands and brought it down with all of his might.</p>
-<p>The Draconic words spilled from his mouth like molten iron from a crucible.</p>
-<p>It struck the anvil with a pulse, not a clang, low and vast. Like the deep bellows of Mora exhaling for the first time in centuries.</p>
-<p>Light erupted from the point of impact, not gold and orange, but white. Brass-white. It shot sparks with flecks of silver like it was given voice. The fire expanded from the anvil, pulsing outward across the forge like a memory being remembered all at once.</p>
-<p>The shadow screamed.</p>
-<p>It was not the cry of pain. It was the sound of distortion. Like wind howling through a sealed tomb. Like a name being erased mid-syllable.</p>
-<p>The light struck it, and the shadow burned.</p>
-<p>Edges curled. A stretch of it folded into itself. It retreated, fast and formless, pouring back through the open wall and into the silence of the town.</p>
-<p>Gone.</p>
-<p>Not destroyed. But wounded.</p>
-<p>The silence that followed was not relief.</p>
-<p>It was aftermath.</p>
-<p>Ash stirred in the air, the echo of the anvil strike lifting it upward. Issachar stood, breathing hard, shoulders trembling beneath his soot-streaked shirt. The fire he'd struck had already begun to dim, but it had done its work.</p>
-<p>He let the breath out of his lungs and turned to the forge. It still held the embers of flame he'd kindled. Faint. Flickering.</p>
-<p>But alive.</p>
-<p>He stepped back toward it, crouched low, and began to feed it again, bit by bit, down to the last stool legs, carved with clan marks.</p>
-<p>The fire rose, slow but sure, climbing back into the throat of the chimney like a mournful song.</p>
-<p>This was no torch-ring. No perimeter of fear.</p>
-<p>This was a forge.</p>
-<p>He sat inside, not surrounded by torches, but protected by fire.</p>
-<p>The glow painted the walls in shifting oranges. The now-cracked anvil gleamed. The scent of silver and soot returned. And the shadow did not.</p>
-<p>Issachar gathered his things close. Placed the hammer beside him, the ring of Silfrtregi pocketed away beneath his belt.</p>
-<p>Then he sat by the fire. Legs crossed. Hands open to the warmth.</p>
-<p>The forge held.</p>
-<p>The fire settled into a steady rhythm, low, pulsing, alive.</p>
-<p>Issachar sat beside it, back against the warm stone of the forge wall, his hammer at his side. His eyes stayed open scanning the doorway and broken windows. Nothing moved beyond the firelight. Not even wind. The silence had returned, but it no longer pressed in.</p>
-<p>It watched but did not reach.</p>
-<p>He let the stillness stretch, let his thoughts drift with it.</p>
-<p>And memory came.</p>
-<p>He was still young, before leaving for the Arcanum Sanctuary, before his magic started to show, when his grandfather took him to the Forge at dawn.</p>
-<p>Not the shared furnace of the forge-hall, but the family hearth. The Forge. Carved into the living stone of the Hold, passed down from Firestoker to Firestoker. The old dwarf lit no lanterns. He moved in silence, his boots sure across the cold stone. His breath visible in the chill of the air.</p>
-<p>The forge was cold. The coals grey.</p>
-<p>Issachar stood shivering while his grandfather crouched at the edge of the hearth. He placed the flint and steel on the stone between them.</p>
-<p>"Do you know why we light the Forge?" his grandfather asked.</p>
-<p>Issachar swallowed, uncertain. "To work the iron?"</p>
-<p>His grandfather shook his head, slow.</p>
-<p>"No. That comes later. We light it so Mora remembers us." He paused. "The world is old, lad. But She forgets nothing…as long as the fires are lit." His grandfather placed the flint and steel in Issachar's yet-calloused hands. "Each time the hearth is kindled, Mora remembers who did it. She feels the shape of your hands in the flame. Hears your name in the breath of the bellows."</p>
-<p>Issachar knelt. The coals were colder than he expected. "What if it doesn't light?"</p>
-<p>"Then she is telling you that you aren't ready. But the Forge will wait. Mora always waits."</p>
-<p>Issachar struck the flint with the steel. Sparks missed the coals. He struck again and again.</p>
-<p>"Is she watching now?"</p>
-<p>"Always."</p>
-<p>On the eighth strike, the coals caught.</p>
-<p>A flame lifted, small, but steady.</p>
-<p>His grandfather smiled and placed his hand on Issachar's shoulder. "Now, she knows your name."</p>
-<p>Back in Greyshore, the forge-fire hissed softly beside him.</p>
-<p>This forge did not know him. But the fire did. And Mora did.</p>
-<p>Issachar was not forgotten.</p>
-<p>And now, neither were the Silfrtregi.</p>
-<p>The forge had burned steady for hours.</p>
-<p>Outside, the silence remained unbroken. But Issachar could feel it tightening. Like pressure building before a storm, when the wind dies and the air forgets how to breathe.</p>
-<p>The shadows outside lurked. Waiting.</p>
-<p>The fire before him began to dim, not for lack of wood, but for lack of will. His will.</p>
-<p>He blinked hard. His vision swam. His head dipped once, twice.</p>
-<p>He straightened. Bit his tongue. The fire danced back weakly in the hearth.</p>
-<p>No. Not yet. The sun still isn't up.</p>
-<p>He reached into his satchel with unsteady fingers and pulled out a steel striker. His grandfather's. He hadn't used it in years, not since he learned to conjure fire from his hands. It lived in the bottom corner of his pack, beneath tools and talismans. Just a lump of steel to most. But not to him.</p>
-<p>He turned it over in his palm, then held it close to the coals.</p>
-<p>"You've always lit for me before. Now again, one last time."</p>
-<p>Next, he took out a small pouch of copper dust and ash. The contents shimmered faintly in the forge light, the metallic flecks catching on the edge of the flame like sparks trapped in powder.</p>
-<p>He opened the pouch all the way and sprinkled it into the dying flame.</p>
-<p>A thin whine escaped the coals.</p>
-<p>In deep Draconic he whispered, the words part memory, part invocation.</p>
-<p>Then he hesitated. There wasn't much chalk left. He could tell just by weight, two…maybe three uses left. Once it was gone, he wouldn't be able to find any more outside of a proper mage's study. Maybe not even in Gravesford.</p>
-<p>But the fire was dying.</p>
-<p>He took the stick and snapped off a sliver with his thumb. Crushed it between his fingers and leaned over the forge.</p>
-<p>He drew a rune on his grandfather's steel striker, and dropped it in.</p>
-<p>The coals hissed and moaned.</p>
-<p>The fire surged. Not explosively, but with force to be reckoned. A roar, like a lion's in a deep tunnel. The copper dust flared, and the ash curled.</p>
-<p>The light pressed out once again.</p>
-<p>The shadows withdrew.</p>
-<p>Issachar sank back against the outside of the forge, the pouch empty in his lap.</p>
-<p>He didn't remember falling asleep.</p>
-<p>But when his eyes opened, the fire was still strong. The forge was thick with the smell of cooling ash.</p>
-<p>Beyond the doorway, sunlight had crept across the stone while he slept, pale gold, sharp, cutting the last of the night away.</p>
-<p>He sat up slowly. His limbs ached. His throat was dry. But he was alive.</p>
-<p>And the shadow was gone.</p>
-<p>Not defeated, not banished.</p>
-<p>Just waiting for night.</p>
-<p>He gathered his things with practiced efficiency. The empty copper dust pouch, the fragmented chalk, two uses left. The ring of Silfrtregi he checked last.</p>
-<p>He stepped out into the sun. It poured over his shoulders without resistance. It caught the edge of his cloak and kissed the brass of his hammer.</p>
-<p>The Cradle did not return over Greyshore.</p>
-<p>But the sun was enough.</p>
-<p>Issachar thought to himself, "Valdrin will need to know what happened here."</p>
-</template>
-
-<template id="c-hedge-mage-prologue">
-<p>The Cradle shimmered. Ribbons of emerald and violet stretched across the sky in a slow, rhythmic pulse. Ever watchful, it cast its light across the land, illuminating the fields of golden grain swaying in the night breeze. Shadows stretched long and thin from an ancient sycamore tree, its gnarled roots curling deep into the soil, leaching for something long forgotten.</p>
-<p>A lone figure knelt beneath the tree, hands trembling as they pressed a small leather-bound book into a hole in the earth. The pages, thick with ink and time, bore the gentle glow of old magic. Magic meant to be read with small hands and eager eyes, magic meant to be traced into the dirt with a child's wonder. The weight of grief bowed the man's shoulders, but the movement was careful, deliberate, as if the act itself might stave off loss.</p>
-<p>The child was gone, taken by a sickness that no spell could mend. There'd been no cries, no resistance — only a slow fading, a light dimming too soon. But magic was never truly lost. The land remembered. The sky carried whispers of what had come before. And beneath this ancient sycamore, where roots and earth intertwined, there would be memory.</p>
-<p>The soil was pressed firm beneath calloused fingers, sealing the book away, a last offering to the world. Not to be lost, not to be forgotten. One day, another child would find it. Perhaps not soon, not in his lifetime, but the magic woven into the pages would call to them — one with the same hunger for knowledge, the same restless curiosity. And when they did, they would not be alone.</p>
-<p>Something stirred beneath the roots. Not seen. Not heard. Felt. A presence as old as the land itself, watching, waiting. The Cradle's light pulsed once — slow, rhythmic — like a heartbeat in the sky. The air held its breath, and the moment passed.</p>
-<p>The figure stood, dusting soil from their hands, casting one last glance at the tree. The night wind carried the scent of tilled soil and the rain to come. In the distance, the fields whispered. The land would remember.</p>
-<p>And when the time came, the child who found the book would be drawn not just by chance, but by unseen hands of the past.</p>
-<p>Not just to learn.</p>
-<p>But to awaken.</p>
-<p>The Cradle flickered, and the world turned onward…forgetting. Until it was time to remember again.</p>
-</template>
+<nav>
   <a class="site-title" href="#top">The Verses of Antara</a>
   <ul class="nav-links" id="nav-links">
     <li><a href="#timeline">Timeline</a></li>
@@ -638,8 +230,12 @@ footer{border-top:1px solid var(--border);padding:1.75rem 2rem;text-align:center
       </div>
     </div>
     <div class="admin-bar" id="admin-bar">
-      <span class="admin-bar-txt">⚑ Admin Mode — delete buttons are enabled</span>
+      <span class="admin-bar-txt">⚑ Admin Mode — review submissions &amp; manage gallery</span>
       <button class="btn btn-danger" id="exit-admin-btn">Exit Admin</button>
+    </div>
+    <div class="pending-section" id="pending-section">
+      <div class="pending-hd">Pending Review</div>
+      <div class="pending-grid" id="pending-grid"></div>
     </div>
     <div class="gallery-empty" id="gallery-empty">No art has been submitted yet. Be the first to share your vision of Antara.</div>
     <div class="fanart-grid" id="fanart-grid" style="display:none"></div>
@@ -648,7 +244,6 @@ footer{border-top:1px solid var(--border);padding:1.75rem 2rem;text-align:center
 
 <footer>The Verses of Antara &mdash; All stories are original works of fiction. All rights reserved.</footer>
 
-<!-- Story Modal -->
 <div class="overlay" id="story-overlay">
   <div class="modal" id="story-modal">
     <button class="modal-close" id="story-close">&times;</button>
@@ -660,7 +255,6 @@ footer{border-top:1px solid var(--border);padding:1.75rem 2rem;text-align:center
   </div>
 </div>
 
-<!-- Admin Login Modal -->
 <div class="overlay" id="admin-overlay">
   <div class="modal modal-sm">
     <button class="modal-close" id="admin-close">&times;</button>
@@ -685,9 +279,9 @@ const STORIES = [
     type: 'Short Story',
     era: '1 Year Before the Hedge Mage',
     synopsis: 'A wrong turn on a forgotten road brings Issachar, a weary dwarven mage, to a ruined town where nothing stirs — no birds, no wind, not even the familiar shimmer of the sky overhead. By the time he understands what is wrong with this place, the sun is already going down, and the dark is waiting.',
-    isNovel: false,
     cw: 'Mild horror, death imagery',
-    templateId: 'c-four-wrong-things'
+    isNovel: false,
+    file: 'stories/four-wrong-things.html'
   },
   {
     id: 'hedge-mage',
@@ -695,10 +289,10 @@ const STORIES = [
     type: 'Novel',
     era: '',
     synopsis: 'When a farmer\'s daughter unearths a buried spellbook and awakens a power she was never meant to hold, she\'s swept into the Arcanum Sanctuary, where lowborn talent is scorned, magic is paid for in blood, and something ancient stirs beneath the tower. As Pinna\'s gift grows and a rival\'s ambition darkens, both girls are drawn toward a hunger that has been waiting longer than either has been alive.',
-    isNovel: true,
     cw: 'Dark themes, blood magic, violence, self harm',
+    isNovel: true,
     chapters: [
-      { num: 'Prologue',    title: '', templateId: 'c-hedge-mage-prologue' },
+      { num: 'Prologue',    title: '', file: 'stories/hedge-mage/prologue.html' },
       { num: 'Chapter 1',   title: 'Origin' },
       { num: 'Chapter 2',   title: 'A Road of Lessons' },
       { num: 'Chapter 3',   title: 'The White-gold Tower' },
@@ -726,15 +320,16 @@ const STORIES = [
 ];
 
 const TL_NODES = [
-  { ph:true, label:'· · ·', era:'The Ancient Age' },
-  { ph:true, label:'· · ·', era:'The First Age' },
-  { id:'four-wrong-things', label:'The Four Wrong Things', era:'Before the Third Age' },
-  { id:'hedge-mage', label:'The Hedge Mage', era:'The Third Age', main:true },
-  { ph:true, label:'· · ·', era:'After the Third Age' },
-  { ph:true, label:'· · ·', era:'Ages Hence' },
+  { ph:true, label:'· · ·' },
+  { id:'four-wrong-things', label:'The Four Wrong Things' },
+  { id:'hedge-mage', label:'The Hedge Mage', main:true },
+  { ph:true, label:'The Witch in the Woods' },
+  { ph:true, label:'Greyshore (TBD)' },
+  { ph:true, label:'Heist Story (TBD)' },
 ];
 
 let adminMode = false, pendingImg = null;
+const fileCache = {};
 
 function renderTimeline() {
   const c = document.getElementById('tl-nodes');
@@ -759,50 +354,78 @@ function renderStories() {
   });
 }
 
-function openModal(id) {
+async function fetchFile(path) {
+  if (fileCache[path]) return fileCache[path];
+  const res = await fetch(path);
+  if (!res.ok) throw new Error('Could not load ' + path);
+  const html = await res.text();
+  fileCache[path] = html;
+  return html;
+}
+
+function wordStats(html) {
+  const tmp = document.createElement('div');
+  tmp.innerHTML = html;
+  const words = tmp.textContent.trim().split(/\s+/).filter(w => w.length > 0).length;
+  return { words: words.toLocaleString(), mins: Math.ceil(words / 200) };
+}
+
+async function openModal(id) {
   const s = STORIES.find(x => x.id === id);
   if (!s) return;
   document.getElementById('m-tag').textContent = s.type;
   document.getElementById('m-title').textContent = s.title;
-  document.getElementById('m-era').textContent = s.era;
+  document.getElementById('m-era').textContent = s.era || '';
+  document.getElementById('m-stats').innerHTML = '';
   const b = document.getElementById('m-body');
   b.innerHTML = '';
-  document.getElementById('m-stats').innerHTML = '';
+  document.getElementById('story-overlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+  document.getElementById('story-overlay').scrollTop = 0;
+
   if (s.isNovel) {
     const ul = document.createElement('ul');
     ul.className = 'ch-list';
-    s.chapters.forEach(ch => {
+    s.chapters.forEach((ch, idx) => {
       const li = document.createElement('li');
-      li.className = 'ch-row' + (ch.templateId ? ' readable' : '');
-      if (ch.templateId) li.onclick = () => openChapter(s.id, ch.templateId, ch.num, ch.title);
-      li.innerHTML = `<span class="ch-num">${ch.num}</span><span class="ch-title">${ch.title||''}</span><span class="ch-status">${ch.templateId ? 'Read ›' : (ch.status||'')}</span>`;
+      li.className = 'ch-row' + (ch.file ? ' readable' : '');
+      if (ch.file) li.onclick = () => openChapter(s.id, idx);
+      li.innerHTML = `<span class="ch-num">${ch.num}</span><span class="ch-title">${ch.title||''}</span><span class="ch-status">${ch.file ? 'Read ›' : 'forthcoming'}</span>`;
       ul.appendChild(li);
     });
     b.appendChild(ul);
-  } else if (s.templateId) {
-    const stats = getReadingStats(s.templateId);
-    if (stats) document.getElementById('m-stats').innerHTML = `${stats.words} words &middot; ~${stats.mins} min read`;
-    const tmpl = document.getElementById(s.templateId);
-    const wrap = document.createElement('div');
-    wrap.className = 'story-text';
-    wrap.appendChild(tmpl.content.cloneNode(true));
-    b.appendChild(wrap);
-  } else {
-    b.innerHTML = `<div class="story-text"><p>${s.content||'Coming soon.'}</p></div>`;
+  } else if (s.file) {
+    b.innerHTML = '<div class="loading-txt">Loading…</div>';
+    try {
+      const html = await fetchFile(s.file);
+      const st = wordStats(html);
+      document.getElementById('m-stats').innerHTML = `${st.words} words &middot; ~${st.mins} min read`;
+      b.innerHTML = `<div class="story-text">${html}</div>`;
+    } catch (e) {
+      b.innerHTML = '<div class="loading-txt">Could not load this story. Please try again.</div>';
+    }
   }
-  document.getElementById('story-overlay').classList.add('open');
-  document.body.style.overflow = 'hidden';
 }
 
-document.getElementById('story-close').onclick = closeStory;
-document.getElementById('story-overlay').onclick = e => { if (e.target.id==='story-overlay') closeStory(); };
-function closeStory() { document.getElementById('story-overlay').classList.remove('open'); document.body.style.overflow=''; }
-
-function openChapter(storyId, templateId, chNum, chTitle) {
-  const b = document.getElementById('m-body');
+async function openChapter(storyId, chIdx) {
+  const s = STORIES.find(x => x.id === storyId);
+  const ch = s.chapters[chIdx];
   document.getElementById('m-era').textContent = '';
-  const stats = getReadingStats(templateId);
-  document.getElementById('m-stats').innerHTML = stats ? `${stats.words} words &middot; ~${stats.mins} min read` : '';
+  document.getElementById('m-stats').innerHTML = '';
+  const b = document.getElementById('m-body');
+  b.innerHTML = '<div class="loading-txt">Loading…</div>';
+  document.getElementById('story-overlay').scrollTop = 0;
+
+  let html;
+  try {
+    html = await fetchFile(ch.file);
+  } catch (e) {
+    b.innerHTML = '<div class="loading-txt">Could not load this chapter. Please try again.</div>';
+    return;
+  }
+  const st = wordStats(html);
+  document.getElementById('m-stats').innerHTML = `${st.words} words &middot; ~${st.mins} min read`;
+
   b.innerHTML = '';
   const back = document.createElement('button');
   back.className = 'btn btn-ghost';
@@ -810,27 +433,42 @@ function openChapter(storyId, templateId, chNum, chTitle) {
   back.textContent = '← Back to Chapters';
   back.onclick = () => openModal(storyId);
   b.appendChild(back);
-  if (chTitle) {
+
+  if (ch.title) {
     const hd = document.createElement('div');
     hd.style.cssText = "font-family:'Cinzel',serif;font-size:1.05rem;color:var(--parchment);margin-bottom:1.75rem;opacity:.85";
-    hd.textContent = chTitle;
+    hd.textContent = ch.title;
     b.appendChild(hd);
   }
-  const tmpl = document.getElementById(templateId);
+
   const wrap = document.createElement('div');
   wrap.className = 'story-text';
-  wrap.appendChild(tmpl.content.cloneNode(true));
+  wrap.innerHTML = html;
   b.appendChild(wrap);
-  document.getElementById('story-overlay').scrollTop = 0;
+
+  // Prev/Next among readable chapters
+  const readable = s.chapters.map((c, i) => c.file ? i : -1).filter(i => i >= 0);
+  const pos = readable.indexOf(chIdx);
+  const nav = document.createElement('div');
+  nav.className = 'ch-nav';
+  const prevBtn = document.createElement('button');
+  prevBtn.className = 'btn btn-ghost nav-prev';
+  prevBtn.textContent = '‹ Previous';
+  if (pos > 0) prevBtn.onclick = () => openChapter(storyId, readable[pos-1]);
+  else prevBtn.disabled = true;
+  const nextBtn = document.createElement('button');
+  nextBtn.className = 'btn btn-ghost nav-next';
+  nextBtn.textContent = 'Next ›';
+  if (pos < readable.length - 1 && pos !== -1) nextBtn.onclick = () => openChapter(storyId, readable[pos+1]);
+  else nextBtn.disabled = true;
+  nav.appendChild(prevBtn);
+  nav.appendChild(nextBtn);
+  b.appendChild(nav);
 }
 
-function getReadingStats(templateId) {
-  const tmpl = document.getElementById(templateId);
-  if (!tmpl) return null;
-  const words = tmpl.content.textContent.trim().split(/\s+/).filter(w => w.length > 0).length;
-  const mins = Math.ceil(words / 200);
-  return { words: words.toLocaleString(), mins };
-}
+document.getElementById('story-close').onclick = closeStory;
+document.getElementById('story-overlay').onclick = e => { if (e.target.id==='story-overlay') closeStory(); };
+function closeStory() { document.getElementById('story-overlay').classList.remove('open'); document.body.style.overflow=''; }
 
 document.getElementById('admin-btn').onclick = () => {
   if (adminMode) { exitAdmin(); return; }
@@ -847,16 +485,16 @@ function tryLogin() {
   if (document.getElementById('pw-input').value === ADMIN_PW) {
     adminMode = true;
     document.body.classList.add('admin-mode');
-    const b = document.getElementById('admin-btn');
-    b.classList.add('active'); b.textContent = 'Exit Admin';
+    const btn = document.getElementById('admin-btn');
+    btn.classList.add('active'); btn.textContent = 'Exit Admin';
     closeAdminModal();
   } else { document.getElementById('pw-error').style.display='block'; }
 }
 function exitAdmin() {
   adminMode = false;
   document.body.classList.remove('admin-mode');
-  const b = document.getElementById('admin-btn');
-  b.classList.remove('active'); b.textContent = 'Admin';
+  const btn = document.getElementById('admin-btn');
+  btn.classList.remove('active'); btn.textContent = 'Admin';
 }
 document.getElementById('exit-admin-btn').onclick = exitAdmin;
 
@@ -890,76 +528,16 @@ function handleFile(f) {
   r.readAsDataURL(f);
 }
 
-document.getElementById('submit-btn').onclick = async () => {
+document.getElementById('submit-btn').onclick = () => {
   if (!pendingImg) { setMsg('Please select an image first.'); return; }
   const t = document.getElementById('art-title').value.trim();
   const a = document.getElementById('art-artist').value.trim();
   if (!t||!a) { setMsg('Please fill in both title and artist name.'); return; }
-  setMsg('Submitting…');
-  const id = 'art_'+Date.now();
-  const item = {id,title:t,artist:a,timestamp:Date.now(),dataUrl:pendingImg};
-  try {
-    await window.storage.set('fanart:'+id, JSON.stringify(item));
-    let idx=[];
-    try { const r=await window.storage.get('fanart:index'); if(r) idx=JSON.parse(r.value); } catch {}
-    idx.push(id);
-    await window.storage.set('fanart:index', JSON.stringify(idx));
-    addArtCard(item);
-    document.getElementById('gallery-empty').style.display='none';
-    document.getElementById('fanart-grid').style.display='';
-    pendingImg=null;
-    document.getElementById('up-preview').style.display='none';
-    document.getElementById('preview-img').src='';
-    document.getElementById('art-title').value='';
-    document.getElementById('art-artist').value='';
-    fi.value='';
-    setMsg('Submitted! Thank you.');
-    setTimeout(()=>setMsg(''),3000);
-  } catch { setMsg('Error saving — please try again.'); }
+  // NOTE: Fan art saving will be wired up to Supabase next. For now this is a placeholder.
+  setMsg('Fan art storage is being set up — submissions will be enabled soon.');
 };
 function setMsg(m){document.getElementById('upload-msg').textContent=m;}
 
-function addArtCard(item) {
-  const g=document.getElementById('fanart-grid');
-  const d=document.createElement('div');
-  d.className='fanart-item'; d.dataset.id=item.id;
-  d.innerHTML=`<img src="${item.dataUrl}" alt="${item.title}" loading="lazy"><div class="fanart-meta"><span class="fa-title">${item.title}</span><span class="fa-artist">by ${item.artist}</span></div><button class="fanart-del" title="Delete" onclick="delArt('${item.id}',this)">×</button>`;
-  g.appendChild(d);
-}
-
-async function delArt(id,btn) {
-  if (!adminMode||!confirm('Remove this piece from the gallery?')) return;
-  try {
-    await window.storage.delete('fanart:'+id);
-    let idx=[];
-    try { const r=await window.storage.get('fanart:index'); if(r) idx=JSON.parse(r.value); } catch {}
-    await window.storage.set('fanart:index', JSON.stringify(idx.filter(i=>i!==id)));
-    btn.closest('.fanart-item').remove();
-    if (!document.getElementById('fanart-grid').children.length) {
-      document.getElementById('fanart-grid').style.display='none';
-      document.getElementById('gallery-empty').style.display='';
-    }
-  } catch(e){console.error(e);}
-}
-
-async function loadGallery() {
-  try {
-    const r=await window.storage.get('fanart:index');
-    if (!r) return;
-    const ids=JSON.parse(r.value);
-    if (!ids.length) return;
-    let n=0;
-    for (const id of ids) {
-      try { const e=await window.storage.get('fanart:'+id); if(e){addArtCard(JSON.parse(e.value));n++;} } catch {}
-    }
-    if (n) { document.getElementById('gallery-empty').style.display='none'; document.getElementById('fanart-grid').style.display=''; }
-  } catch {}
-}
-
-document.getElementById('hamburger').onclick=()=>document.getElementById('nav-links').classList.toggle('open');
-document.querySelectorAll('.nav-links a').forEach(a=>a.onclick=()=>document.getElementById('nav-links').classList.remove('open'));
-
 renderTimeline();
 renderStories();
-loadGallery();
 </script>
