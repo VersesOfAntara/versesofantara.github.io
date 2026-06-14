@@ -458,7 +458,7 @@ document.getElementById('contact-send').onclick = async () => {
   if (!message) { document.getElementById('c-message').classList.add('field-err'); document.getElementById('err-message').classList.add('show'); valid = false; }
   if (!valid) return;
 
-  if (FORMSPREE_ID === 'YOUR_FORM_ID') {
+  if (FORMSPREE_ID === 'https://formspree.io/f/xnjylnry') {
     setStatus('Contact form is not yet connected — add your Formspree ID.', 'bad');
     return;
   }
